@@ -1,8 +1,8 @@
 export default class TokenBucket {
-  private bucketSize: number;
-  private tokens: number;
-  private refillRate: number; // tokens per second
-  private lastRefillTime: number; // timestamp in milliseconds
+  bucketSize: number;
+  tokens: number;
+  refillRate: number; // tokens per second
+  lastRefillTime: number; // timestamp in milliseconds
 
   constructor(bucketSize: number, refillRate: number) {
     this.bucketSize = bucketSize;
