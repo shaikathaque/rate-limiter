@@ -1,22 +1,19 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import express from "express";
-import dotenv from "dotenv";
+import express from 'express';
+import dotenv from 'dotenv';
 
-import { RateLimit } from "./middleware/RateLimit";
+import { RateLimit } from './middleware/RateLimit';
 
 dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT;
 
-app.get("/", RateLimit, (request: Request, response: Response) => { 
-  response.status(200).send("Hello World");
-}); 
+app.get('/', RateLimit, (request: Request, response: Response) => {
+  response.status(200).send('Hello World');
+});
 
-app.listen(PORT, () => { 
-  console.log("Server running at PORT: ", PORT); 
-}).on("error", (error: any) => {
-  // gracefully handle error
-  throw new Error(error.message);
-})
+app.listen(PORT, () => {
+  console.log('Server running at PORT: ', PORT);
+});

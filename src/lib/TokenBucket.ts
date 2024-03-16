@@ -24,7 +24,7 @@ export default class TokenBucket {
     if (this.tokens + tokensToAdd >= this.bucketSize) {
       this.tokens = this.bucketSize;
     } else {
-      this.tokens = this.tokens + tokensToAdd
+      this.tokens = this.tokens + tokensToAdd;
     }
 
     // update last refill time
@@ -33,7 +33,7 @@ export default class TokenBucket {
 
   allowRequest() {
     // refill bucket based on time passed since last refill and update number of tokens
-    this.refill(); 
+    this.refill();
 
     // allow request if tokens are available in bucket
     if (this.tokens > 0) {
@@ -43,4 +43,3 @@ export default class TokenBucket {
     return false; // no tokens available
   }
 }
-
