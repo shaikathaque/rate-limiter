@@ -14,7 +14,7 @@ describe('TokenBucket', () => {
     const bucket = new TokenBucket(bucketSize, refillRate);
 
     // use up all tokens
-    for (let i = 0; i < bucketSize; i++) {
+    for (let i = 0; i <= bucketSize; i++) {
       bucket.allowRequest();
     }
 

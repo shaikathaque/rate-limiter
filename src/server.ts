@@ -11,9 +11,11 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.get('/', RateLimit, (request: Request, response: Response) => {
-  response.status(200).send('Hello World');
+  response.status(200).send('Hello World!');
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log('Server running at PORT: ', PORT);
 });
+
+export { app, server };
